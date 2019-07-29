@@ -1,31 +1,28 @@
-==========================
-multi-touch-canvas-handler
-==========================
+
+# multi-touch-canvas-handler #
+
 
 <b>Get touch coordinates , start/end event etc  for 10 fingers.
 
-hello visitors , this is small script but very interest.</b>
+Hello visitors , this is small script but very interest.</b>
 
 You can get at any time x or y position for ten fingers in canvas 2d surface.
 I implement HUB button - detect when you finger get in rectangle .
 
-
+```
 var CONTROL = new MOBILE_CONTROL();
 
-....
-.....
-
 console.log(CONTROL.MULTI_TOUCH_X1);
+```
 
-or get console.log(CONTROL.MULTI_TOUCH_X10);
+or get ```console.log(CONTROL.MULTI_TOUCH_X10);```
 
 If you move all finger no problem , script will handle all.
 
+### DRAW TARGET LINES : ###
 
-DRAW TARGET LINES :
-
-in canvas draw() -->
-
+```
+// In canvas draw() -->
 
 if (CONTROL.MULTI_TOUCH_X1 !== 'undefined'){
 
@@ -98,5 +95,6 @@ ctx.fillRect(CONTROL.MULTI_TOUCH_X10 , CONTROL.MULTI_TOUCH_Y10-400  , 1, 2500);
 ctx.fillRect(CONTROL.MULTI_TOUCH_X10 -400 , CONTROL.MULTI_TOUCH_Y10 , 2500, 1);
 
 }
+```
 
   
