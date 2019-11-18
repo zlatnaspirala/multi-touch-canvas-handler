@@ -1,5 +1,5 @@
 
-# multi-touch-canvas-handler #
+# Multi-touch-canvas-handler #
 
 
 <b>Get touch coordinates , start/end event etc  for 10 fingers.
@@ -17,7 +17,7 @@ console.log(CONTROL.MULTI_TOUCH_X1);
 
 or get ```console.log(CONTROL.MULTI_TOUCH_X10);```
 
-If you move all finger no problem , script will handle all.
+If you move all finger's no problem, script will handle all.
 
 ### DRAW TARGET LINES : ###
 
