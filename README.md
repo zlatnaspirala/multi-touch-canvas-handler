@@ -21,7 +21,7 @@ If you move all finger's no problem, script will handle all.
 
 ### DRAW TARGET LINES : ###
 
-```
+```javascript
 // In canvas draw() -->
 
 if (CONTROL.MULTI_TOUCH_X1 !== 'undefined'){
