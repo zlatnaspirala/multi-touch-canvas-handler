@@ -1,100 +1,68 @@
 
-# Multi-touch-canvas-handler #
+# Multi-touch-canvas-handler
+# Version 2.0
 
+### Hello visitors , this is small script but very interest.
+### Get touch coordinates , start/end event etc  for 10 fingers.
+### If you move all finger's no problem, script will handle all.
+### You can get at any time x or y position for ten fingers in canvas 2d surface.
+### I implement HUB button - detect when you finger get in rectangle .
 
-<b>Get touch coordinates , start/end event etc  for 10 fingers.
+Note:
+ - If you wanna implement it with your own canvas then you no need for `visualPresentation`
 
-Hello visitors , this is small script but very interest.</b>
+## ECMA5 Solution:
 
-You can get at any time x or y position for ten fingers in canvas 2d surface.
-I implement HUB button - detect when you finger get in rectangle .
+```js
+var mTouchHandler = new MultiTouchHandler();
 
+mTouchHandler.APP.BODY.ADD_2DCANVAS("canvas_2", mTouchHandler.SCREEN.W, mTouchHandler.SCREEN.H);
+mTouchHandler.APP.BODY.SET_STYLE("margin: 0;padding:0;border:none;");
+
+visualPresentation(mTouchHandler);
 ```
-var CONTROL = new MOBILE_CONTROL();
 
-console.log(CONTROL.MULTI_TOUCH_X1);
+
+## ECMA6 Solution:
+
+```js
+import { MultiTouchHandler, visualPresentation } from "./multi-touch";
+
+window.onload = function () {
+
+  /* Create instance */
+  var mTouchHandler = new MultiTouchHandler();
+  var canvas = mTouchHandler.APP.BODY.ADD_2DCANVAS( "canvas_2", window.innerWidth, window.innerHeight );
+  mTouchHandler.APP.BODY.SET_STYLE( "margin: 0;padding:0;border:none;" );
+  mTouchHandler.attachEvents( canvas );
+
+  visualPresentation(mTouchHandler);
+}
 ```
 
-or get ```console.log(CONTROL.MULTI_TOUCH_X10);```
 
-If you move all finger's no problem, script will handle all.
-
-### DRAW TARGET LINES : ###
+### Draw target lines:
 
 ```javascript
-// In canvas draw() -->
+// In canvas draw func call it -->
 
-if (CONTROL.MULTI_TOUCH_X1 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X1 , CONTROL.MULTI_TOUCH_Y1-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X1 -400 , CONTROL.MULTI_TOUCH_Y1 , 2500, 1);
-
+if (multiTouchInstance.MULTI_TOUCH_X1 !== 'undefined'){
+  ctx.fillRect(multiTouchInstance.MULTI_TOUCH_X1 , multiTouchInstance.MULTI_TOUCH_Y1-400  , 1, 2500);
+  ctx.fillRect(multiTouchInstance.MULTI_TOUCH_X1 -400 , multiTouchInstance.MULTI_TOUCH_Y1 , 2500, 1);
 }
 
-if (CONTROL.MULTI_TOUCH_X2 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X2 , CONTROL.MULTI_TOUCH_Y2-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X2 -400 , CONTROL.MULTI_TOUCH_Y2 , 2500, 1);
-
+if (multiTouchInstance.MULTI_TOUCH_X2 !== 'undefined'){
+  ctx.fillRect(multiTouchInstance.MULTI_TOUCH_X2 , multiTouchInstance.MULTI_TOUCH_Y2-400  , 1, 2500);
+  ctx.fillRect(multiTouchInstance.MULTI_TOUCH_X2 -400 , multiTouchInstance.MULTI_TOUCH_Y2 , 2500, 1);
 }
 
-if (CONTROL.MULTI_TOUCH_X3 !== 'undefined'){
+ ...
 
-ctx.fillRect(CONTROL.MULTI_TOUCH_X3 , CONTROL.MULTI_TOUCH_Y3-400  , 1, 2500);
+if (multiTouchInstance.MULTI_TOUCH_X10 !== 'undefined'){
 
-ctx.fillRect(CONTROL.MULTI_TOUCH_X3 -400 , CONTROL.MULTI_TOUCH_Y3 , 2500, 1);
+ctx.fillRect(multiTouchInstance.MULTI_TOUCH_X10 , multiTouchInstance.MULTI_TOUCH_Y10-400  , 1, 2500);
 
-}
-
-if (CONTROL.MULTI_TOUCH_X4 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X4 , CONTROL.MULTI_TOUCH_Y4-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X4 -400 , CONTROL.MULTI_TOUCH_Y4 , 2500, 1);
-
-}
-
-if (CONTROL.MULTI_TOUCH_X5 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X5 , CONTROL.MULTI_TOUCH_Y5-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X5 -400 , CONTROL.MULTI_TOUCH_51 , 2500, 1);
-
-}
-
-if (CONTROL.MULTI_TOUCH_X6 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X6 , CONTROL.MULTI_TOUCH_Y6-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X6 -400 , CONTROL.MULTI_TOUCH_Y6 , 2500, 1);
-
-}
-
-if (CONTROL.MULTI_TOUCH_X7 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X7 , CONTROL.MULTI_TOUCH_Y8-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X7 -400 , CONTROL.MULTI_TOUCH_Y8 , 2500, 1);
-
-}
-
-if (CONTROL.MULTI_TOUCH_X9 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X9 , CONTROL.MULTI_TOUCH_Y9-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X9 -400 , CONTROL.MULTI_TOUCH_Y9 , 2500, 1);
-
-}
-
-if (CONTROL.MULTI_TOUCH_X10 !== 'undefined'){
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X10 , CONTROL.MULTI_TOUCH_Y10-400  , 1, 2500);
-
-ctx.fillRect(CONTROL.MULTI_TOUCH_X10 -400 , CONTROL.MULTI_TOUCH_Y10 , 2500, 1);
+ctx.fillRect(multiTouchInstance.MULTI_TOUCH_X10 -400 , multiTouchInstance.MULTI_TOUCH_Y10 , 2500, 1);
 
 }
 ```
-
-  
