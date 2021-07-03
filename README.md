@@ -1,6 +1,5 @@
 
-# Multi-touch-canvas-handler
-# Version 2.0
+# Multi-touch-canvas-handler `Version 2.0.1`
 
  Hello visitors , this is small script but very interest.
  - Get touch coordinates , start/end event etc  for 10 fingers.
@@ -11,18 +10,22 @@
 Note:
  - If you wanna implement it with your own canvas then you no need for `visualPresentation`
 
+### 
 ## ECMA5 Solution:
 
 ```js
 var mTouchHandler = new MultiTouchHandler();
 
-mTouchHandler.APP.BODY.ADD_2DCANVAS("canvas_2", mTouchHandler.SCREEN.W, mTouchHandler.SCREEN.H);
+mTouchHandler.APP.BODY.ADD_2DCANVAS(
+  "canvas_2",
+   mTouchHandler.SCREEN.W,
+   mTouchHandler.SCREEN.H);
 mTouchHandler.APP.BODY.SET_STYLE("margin: 0;padding:0;border:none;");
 
 visualPresentation(mTouchHandler);
 ```
 
-
+### 
 ## ECMA6 Solution:
 
 ```js
@@ -37,11 +40,11 @@ window.onload = () => {
 
   visualPresentation(mTouchHandler);
 }
-
 ```
 
-### Draw target lines:
 
+###
+### Draw target lines:
 ```javascript
 // In canvas draw func call it -->
 if (multiTouchInstance.MULTI_TOUCH_X1 !== 'undefined'){
