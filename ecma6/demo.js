@@ -1,8 +1,7 @@
 
 import { MultiTouchHandler, visualPresentation } from "./multi-touch";
 
-window.onload = function () {
-
+window.onload = () => {
   /* Create instance */
   var mTouchHandler = new MultiTouchHandler();
   var canvas = mTouchHandler.APP.BODY.ADD_2DCANVAS( "canvas_2", window.innerWidth, window.innerHeight );
