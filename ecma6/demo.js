@@ -1,5 +1,5 @@
 
-import { MultiTouchHandler, visualPresentation } from "./multi-touch";
+import { MultiTouchHandler, visualPresentation } from "./multi-touch.js";
 
 window.onload = () => {
   /* Create instance */
