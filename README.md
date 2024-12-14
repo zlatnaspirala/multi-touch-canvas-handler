@@ -58,7 +58,7 @@ window.onload = () => {
   });
 
   // ...
-  addEventListener('multi.touch.finger.10`', function (e) {
+  addEventListener('multi.touch.finger.10', function (e) {
     showResults(e);
   });
 
