@@ -1,6 +1,6 @@
 {
   "name": "multi-touch-handler",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "description": "Multi touch handler, preparing for npm service.",
   "main": "index.js",
   "directories": {
